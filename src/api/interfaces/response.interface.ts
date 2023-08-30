@@ -10,3 +10,8 @@ export interface response<dataInterface> {
 export interface reqUser extends Request {
     user: User;
 }
+
+export interface reqFavorite extends Request {
+    user: User;
+    pokemonId?: number;
+}
