@@ -32,3 +32,25 @@ export const addToFavorite = async (userId: number, pokemonId: number, pokemonNa
         });
     }
 }
+
+export const removeFromFavorite = async (userId: number, pokemonId: number): Promise<response<null>> => {
+    try {
+        await Favorite.destroy({
+            where: {
+                userId,
+                pokemonId
+            }
+        });
+
+        return ({
+            status: 200,
+            message: 'Pokemon removed from favorites',
+        });
+
+    } catch (error) {
+        return ({
+            status: 500,
+            message: 'Internal server error'
+        });
+    }
+}
