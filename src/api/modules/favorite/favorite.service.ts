@@ -4,15 +4,25 @@ import { response } from "../../interfaces/response.interface";
 
 export const addToFavorite = async (userId: number, pokemonId: number, pokemonName: string): Promise<response<null>> => {
     try {
-        await Favorite.create({
-            userId,
-            pokemonId,
-            pokemonName
+        const [favorite, created] = await Favorite.findOrCreate({
+            where: {
+                userId,
+                pokemonId,
+                pokemonName
+            }
         });
 
+        let message = 'Favorite pokemon added';
+        let status = 201;
+
+        if (!created) {
+            message = 'Pokemon already in favorites';
+            status = 200;
+        }
+
         return ({
-            status: 201,
-            message: 'Favorite pokemon added'
+            status,
+            message
         });
 
     } catch (error) {
