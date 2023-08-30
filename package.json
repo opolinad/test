@@ -1,7 +1,7 @@
 {
   "scripts": {
-    "start": "nodemon src/app.ts",
-    "build:dev": "npx sequelize-cli init && tsc && npx sequelize-cli db:migrate && npx sequelize-cli db:seed:all"
+    "start:dev": "nodemon src/app.ts",
+    "build:dev": "npm install && npx sequelize-cli init && tsc && npx sequelize-cli db:migrate && npx sequelize-cli db:seed:all"
   },
   "devDependencies": {
     "@types/bcrypt": "^5.0.0",
