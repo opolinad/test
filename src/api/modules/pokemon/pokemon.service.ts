@@ -1,3 +1,4 @@
+import Favorite from "../../../db/models/favorite.model";
 import { response } from "../../interfaces/response.interface";
 
 
@@ -20,6 +21,31 @@ export const getPokemonsFromApi = async (page=1): Promise<response<null | { poke
         return ({
             status: response.status,
             message: response.statusText,
+            data: {
+                pokemons
+            }
+        });
+
+    } catch (error) {
+        return ({
+            status: 500,
+            message: 'Internal server error'
+        });
+    }
+}
+
+export const getFavorites = async (userId: number): Promise<response<null | { pokemons: Favorite[] }>> => {
+    try {
+        const pokemons = await Favorite.findAll({
+            where: {
+                userId
+            },
+            attributes: ['pokemonId', 'pokemonName']
+        });
+
+        return ({
+            status: 200,
+            message: 'Favorite pokemons obtained',
             data: {
                 pokemons
             }
