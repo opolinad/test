@@ -1,4 +1,3 @@
-
 import { Table, Model, Column, DataType, Unique } from 'sequelize-typescript';
 
 @Table({ timestamps: true, tableName: 'user' })
@@ -15,7 +14,7 @@ export default class User extends Model {
     @Column(DataType.STRING)
     lastname: string;
 
-    @Column(DataType.STRING)
     @Unique
+    @Column(DataType.STRING)
     email: string;
 }
