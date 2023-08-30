@@ -33,28 +33,3 @@ export const getPokemonsFromApi = async (page=1): Promise<response<null | { poke
         });
     }
 }
-
-export const getFavorites = async (userId: number): Promise<response<null | { pokemons: Favorite[] }>> => {
-    try {
-        const pokemons = await Favorite.findAll({
-            where: {
-                userId
-            },
-            attributes: ['pokemonId', 'pokemonName']
-        });
-
-        return ({
-            status: 200,
-            message: 'Favorite pokemons obtained',
-            data: {
-                pokemons
-            }
-        });
-
-    } catch (error) {
-        return ({
-            status: 500,
-            message: 'Internal server error'
-        });
-    }
-}
