@@ -1,0 +1,25 @@
+h3#cards-container-title{
+    color:#ff6a00;
+    font-family: 'Source Sans Pro',sans-serif;
+    font-size: 40px;
+    font-weight: bolder;
+    margin-left: 15px;
+    text-align: center;
+}
+
+div#cards-container{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+p{
+    color: rgb(23, 23, 176);
+    text-decoration: underline;
+    cursor: pointer;
+    text-align: right;
+    margin: 0 20px;
+    font-size: medium;
+    font-weight: 700;
+}

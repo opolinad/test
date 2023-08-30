@@ -1,0 +1,40 @@
+div#card{
+    width:300px;
+    border: 1px solid lightblue;
+    border-radius: 20px;
+    margin: 20px;
+}
+
+div#card div#header{
+    color:#ff6a00;
+    font-family: 'Source Sans Pro',sans-serif;
+    font-size: 30px;
+    font-weight: bolder;
+    margin-left: 15px;
+    text-align: center;
+}
+
+div#card div#content{
+    text-align: center;
+    padding: 10px;
+}
+
+div#card div#footer{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin: 5px;
+}
+
+div#card div#footer button{
+    background-color: white;
+    border: 1px solid rgb(23, 23, 176);
+    color:rgb(23, 23, 176);
+    font-family: 'Source Sans Pro',sans-serif;
+    font-size: 20px;
+    font-weight: bolder;
+    border-radius: 10px;
+    padding: 8px;
+    margin: 0 auto;
+    cursor: pointer;
+}
