@@ -14,6 +14,9 @@ export const pokemonExists = async (req: reqFavorite, res: Response, next: NextF
         return res.status(404).json({ message: "Pokemon doesn't exist" });
     }
 
+    const jsonResponse = await response.json();
+
     req.pokemonId = Number(pokemonId);
+    req.pokemonName = jsonResponse.name;
     next();
 }

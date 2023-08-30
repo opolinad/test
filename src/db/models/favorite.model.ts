@@ -8,7 +8,10 @@ export default class Favorite extends Model {
     @Column(DataType.INTEGER)
     userId: number;
 
+    @Column(DataType.INTEGER)
+    pokemonId: number;
+
     @Column(DataType.STRING)
-    pokemonId: string;
+    pokemonName: string;
 
 }

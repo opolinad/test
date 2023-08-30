@@ -14,4 +14,5 @@ export interface reqUser extends Request {
 export interface reqFavorite extends Request {
     user: User;
     pokemonId?: number;
+    pokemonName?: string;
 }
