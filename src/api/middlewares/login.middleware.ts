@@ -1,12 +1,12 @@
-import { NextFunction, Response, response } from "express";
-    import User from "../../db/models/user.model";
+import { NextFunction, Response } from "express";
+import User from "../../db/models/user.model";
 import { reqUser } from "../interfaces/response.interface";
 
 export const loginMiddleware = async (req: reqUser, res: Response, next: NextFunction) => {
     const { username, password } = req.body;
 
     if (!username || !password) {
-        res.status(403).json({
+        return res.status(403).json({
             message: 'The request couldn\'t be completed, invalid credentials'
         })
     }
@@ -19,7 +19,7 @@ export const loginMiddleware = async (req: reqUser, res: Response, next: NextFun
     });
 
     if (!user) {
-        res.status(403).json({
+        return res.status(403).json({
             message: 'The request couldn\'t be completed, invalid credentials'
         })
     }
