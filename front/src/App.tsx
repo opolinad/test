@@ -1,12 +1,18 @@
-import React from 'react';
+import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom';
 import CardContainer from "./components/CardContainer/CardContainer";
 import './App.css';
+import LogIn from "./components/LogIn/LogIn";
 
 function App() {
+  const isUserLoogedIn = Boolean(localStorage.getItem('token'));
+
   return (
-    <>
-      <CardContainer></CardContainer>
-    </>
+    <BrowserRouter>
+        <Routes>
+          <Route path='/' element={ isUserLoogedIn ?  <CardContainer/> : <Navigate to='/login' /> } />
+          <Route path='/login' element={ isUserLoogedIn ?  <Navigate to='/' /> : <LogIn /> } />
+        </Routes>
+      </BrowserRouter>
   );
 }
 
