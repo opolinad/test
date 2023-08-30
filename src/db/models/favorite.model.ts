@@ -1,6 +1,6 @@
 
 import { Table, Model, Column, DataType, ForeignKey } from 'sequelize-typescript';
-import User from "./user";
+import User from "./user.model";
 
 @Table({ timestamps: true, tableName: 'favorite' })
 export default class Favorite extends Model {

@@ -1,5 +1,5 @@
 import { NextFunction, Response, response } from "express";
-import User from "../../db/models/user";
+    import User from "../../db/models/user.model";
 import { reqUser } from "../interfaces/response.interface";
 
 export const loginMiddleware = async (req: reqUser, res: Response, next: NextFunction) => {

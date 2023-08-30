@@ -1,4 +1,4 @@
-import User from "../../../db/models/user";
+import User from "../../../db/models/user.model";
 import { response } from "../../interfaces/response.interface";
 import bcrypt from "bcrypt";
 import * as jwt from 'jsonwebtoken';
