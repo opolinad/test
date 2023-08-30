@@ -1,9 +1,9 @@
 import User from "../../../db/models/user";
-import { response } from "../../models/response.model";
+import { response } from "../../interfaces/response.interface";
 import bcrypt from "bcrypt";
 import * as jwt from 'jsonwebtoken';
 
-export const validateCredentials = async (user: User, password: string): Promise<response<null | {token: string}>> => {
+export const validateCredentials = async (user: User, password: string): Promise<response<null | { token: string }>> => {
     try {
 
         const passwordMatch = await bcrypt.compare(password, user.password);

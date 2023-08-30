@@ -1,6 +1,6 @@
 import { Request, Response } from "express";
 import { validateCredentials } from "./login.service";
-import { reqUser, response } from "../../models/response.model";
+import { reqUser, response } from "../../interfaces/response.interface";
 
 export const loginUser = async (req: reqUser, res: Response) => {
   const { password } = req.body;
